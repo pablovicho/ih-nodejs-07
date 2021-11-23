@@ -1,0 +1,20 @@
+{{!-- ./views/books/list.hbs --}}
+<h1>Listado de libros</h1>
+
+<a href="/books/create">Crear libro</a>
+
+<ul>
+{{#each data}}
+	<li>
+		<h1>{{this.title}}</h1>
+		<a href="/books/{{this._id}}">Ver detalles</a> <!-- con este this._id logramos llegar a la  ruta del id-->
+		<a href="/books/{{this._id}}/edit">
+			Editar
+		</a>
+
+        <form method="POST" action="/books/{{this._id}}/delete">
+<button>Borrar</button>
+        </form>
+	</li>
+{{/each}}
+</ul>
