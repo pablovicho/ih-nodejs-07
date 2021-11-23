@@ -7,7 +7,7 @@ const Book = require("./../models/Book")
 
 console.log(Book)
 // 2. CONEXIÓN A BD
-mongoose.connect("mongodb+srv://pablovicho:R1eU9zhE@cluster0.vhj5j.mongodb.net/books", {
+mongoose.connect(process.env.MONGODB_URI, { //cuidado de no poner aquí  la contraseña!!!!!!!!!!!!!!
     useNewUrlParser: true,
 	useUnifiedTopology: true
 })
